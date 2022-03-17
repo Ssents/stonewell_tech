@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'stonewell_tech',
         'USER': 'postgres',
-        'PASSWORD':'jmonty56#',
+        'PASSWORD':'donga563',
         'HOST':'localhost'
     }
 }
