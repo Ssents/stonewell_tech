@@ -140,6 +140,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# THE REACT FRONTEND APPLICATION
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
