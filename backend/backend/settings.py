@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from backend.sk import secret_key
+import backend.sk as key
 import os
 from datetime import timedelta
 from django.conf import settings
@@ -91,10 +92,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stonewell_tech',
-        'USER': 'postgres',
-        'PASSWORD':'donga563',
-        'HOST':'localhost'
+        'NAME': key.database_name,
+        'USER': key.database_user,
+        'PASSWORD': key.database_password,
+        'HOST': key.database_host
     }
 }
 
