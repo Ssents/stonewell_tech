@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, 
@@ -42,6 +42,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_active = models.BooleanField(default = True)
     is_staff = models.BooleanField(default = False)
+
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
     
     ACCOUNT_TYPE_CHOICES = [
         ('INDIV', 'individual'),

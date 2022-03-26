@@ -40,5 +40,5 @@ class ModelTests(TestCase):
              'test123'
          )
 
-         self.assertTrue(user.is_superuser)
+         self.assertTrue(user.is_superuser) # is_superuser is added by PermissionsMixin
          self.assertTrue(user.is_staff)
