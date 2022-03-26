@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # 3RD PARTY APPLICATIONS
     'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -81,10 +82,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'repair_shop',
-        'USER': 'postgres',
-        'PASSWORD':'donga563',
-        'HOST':'localhost'
+        'NAME': keys.db_name,
+        'USER': keys.db_user,
+        'PASSWORD': keys.db_password,
+        'HOST': keys.db_host
     }
 }
 
