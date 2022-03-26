@@ -25,5 +25,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     # CUSTOM APPLICATION URLS
+    path('user/', include('user.urls')),
 
 ]
