@@ -12,7 +12,7 @@ class UserManager(BaseUserManager):
             Creates and saves new user using email
         '''
         
-        user = self.model(email = email, **extra_fields)
+        user = self.model(email = self.normalize_email(email), **extra_fields)
         password = user.set_password(password)
         user.save(using = self._db)
 
@@ -37,5 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     ]
     acount_type = models.CharField(max_length = 256, choices = ACCOUNT_TYPE_CHOICES, 
                                     default = 'CORP')
+
+    objects = UserManager()
     
     USERNAME_FIELD = 'email'
