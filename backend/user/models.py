@@ -56,3 +56,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
     
     USERNAME_FIELD = 'email'
+
+class Role(models.Model):
+    role_name = models.CharField(max_length=50)
+    role_description = models.TextField()
+
+    def __str__s(self):
+        return (self.role_name)
