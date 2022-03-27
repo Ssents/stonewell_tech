@@ -16,6 +16,7 @@ class UserManager(BaseUserManager):
         
         user = self.model(email = self.normalize_email(email), **extra_fields)
         password = user.set_password(password)
+        password = user.set_password(password)
         user.save(using = self._db)
 
         return (user)
@@ -45,6 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+    joined_at = models.DateTimeField(blank = True)
     
     ACCOUNT_TYPE_CHOICES = [
         ('INDIV', 'individual'),
