@@ -34,3 +34,5 @@ class AdminSiteTests(TestCase):
         url = reverse('admin:user_user_change', args=[self.user.id])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
+    
+    

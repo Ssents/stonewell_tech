@@ -8,7 +8,7 @@ class ModelTests(TestCase):
             Test that creating a user with an email is successful
         '''
         email = 'test@gmail.com'
-        password = 'Test@35Ty%'
+        password = '456@3'
 
         user = get_user_model().objects.create_user(
             email = email,
