@@ -44,6 +44,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     joined_at = models.DateTimeField(default = timezone.now)
+
+    ROLE_CHOICES = [
+        ('CUSTOMER', 'CUSTOMER'),
+        ('SALESREP', 'SALES REPRESENTATIVE'),
+        ('SALESMANAG', 'SALES MANAGER'),
+        ('TECH', 'SERVICE TECHNICIAN'),
+        ('ENG', 'ENGINEER'),
+        ('SUPUSR', 'SUPER USER'),
+        ('CEO', 'CEO')
+    ]
+    role =models.CharField(max_length=256, choices = ROLE_CHOICES, default = 'CUSTOMER')
     
     ACCOUNT_TYPE_CHOICES = [
         ('INDIV', 'individual'),
@@ -55,10 +66,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
     
     USERNAME_FIELD = 'email'
-
-class Role(models.Model):
-    role_name = models.CharField(max_length=50)
-    role_description = models.TextField()
-
-    def __str__s(self):
-        return (self.role_name)
