@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # CUSTOM USER APPLICATION
     'user',
+    'product',
 
 ]
 

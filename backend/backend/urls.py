@@ -26,5 +26,6 @@ urlpatterns = [
 
     # CUSTOM APPLICATION URLS
     path('user/', include('user.urls')),
+    path('products/', include('product.urls')),
 
 ]
