@@ -1,4 +1,4 @@
-import CreateTheme from "@mui/material/styles";
+import {CreateTheme} from "@mui/material/styles";
 
 const Theme = CreateTheme({
 
