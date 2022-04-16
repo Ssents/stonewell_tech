@@ -44,3 +44,18 @@ class ModelTests(TestCase):
 
          self.assertTrue(user.is_superuser) # is_superuser is added by PermissionsMixin
          self.assertTrue(user.is_staff)
+
+class UserModelTests(TestCase):
+    '''
+        Test whether the user characteristics are saved well
+    '''
+    self.client = Client()
+    self.client.force_login(self.admin_user)
+    self.user = get_user_model().objects.create_user(
+        email = 'user@stonewelltech.com',
+        username = 'Test username'
+    )
+    user.set_password(password)
+
+    
+    def setUp(self):
