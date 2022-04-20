@@ -15,6 +15,8 @@ class VariantTest(TestCase):
         width_unit = "mm"
         height = 12
         height_unit = "mm"
+        mass = 1
+        mass_unit = "kg"
 
         product = Product.objects.create(
             name = "toothpaste",
@@ -33,7 +35,9 @@ class VariantTest(TestCase):
             width = width,
             width_unit = width_unit,
             height = height,
-            height_unit = height_unit, 
+            height_unit = height_unit,
+            mass = mass
+            mass_unit = "kg"
         )
 
     def test_create_variant_sucessful(self):
