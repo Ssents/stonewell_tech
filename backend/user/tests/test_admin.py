@@ -3,15 +3,17 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 class AdminSiteTests(TestCase):
-
+    '''
+        Testing the User Admin display
+    '''
     def setUp(self):
         '''
-        The setup will create a user and log the user in before the concurrent tests are 
-        done
+            The setup will create a user and log the user in before the concurrent 
+            tests are done
         '''
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
-            email = 'admin@stonewelltech.com',
+            email = 'admin@stonewelltech.com', 
             password = 'pass.124@'
         )
         self.client.force_login(self.admin_user)
@@ -34,5 +36,3 @@ class AdminSiteTests(TestCase):
         url = reverse('admin:user_user_change', args=[self.user.id])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-    
-    

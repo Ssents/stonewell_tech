@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
 
 class ModelTests(TestCase):
@@ -49,13 +49,11 @@ class UserModelTests(TestCase):
     '''
         Test whether the user characteristics are saved well
     '''
-    self.client = Client()
-    self.client.force_login(self.admin_user)
-    self.user = get_user_model().objects.create_user(
-        email = 'user@stonewelltech.com',
-        username = 'Test username'
-    )
-    user.set_password(password)
-
-    
     def setUp(self):
+        self.client = Client()
+        self.client.force_login(self.admin_user)
+        self.user = get_user_model().objects.create_user(
+            email = 'user@stonewelltech.com',
+            username = 'Test username'
+        )
+        user.set_password(password)
