@@ -10,15 +10,12 @@ class MeasurementUnitCategoryTestModel(TestCase):
     def setUp(self):
         
         #  SI UNIT MODEL
-        si_unit = "kilograms"
-        si_unit_mass = SIUnit.objects.create(
-            name = si_unit,
-        )
         #  CATEGORY MODEL
         category_name = "mass"
+        si_unit = "kilograms"
         category = MeasurementUnitCategory.objects.create(
             name = category_name,
-            si_unit = si_unit_mass,
+            si_unit = si_unit,
         )
         # UNITS
         unit_name_1 = "pounds"
@@ -41,9 +38,6 @@ class MeasurementUnitCategoryTestModel(TestCase):
             si_unit_coversion = 200,
         )
     
-    def test_creating_si_unit_successful(self):
-        '''Test that creating SI unit is sucessful in the SIUnit model'''
-        self.assertEqual(self.si_uni_mass.name, self.s_unit)
 
     def test_creating_measurement_unit_category_successful(self):
         '''Test that creating MeasurementUnitCategory instance is successful'''
@@ -53,4 +47,4 @@ class MeasurementUnitCategoryTestModel(TestCase):
         '''Test that creating a measurement unit is successful'''
         self.assertEqual(self.unit_1.name, self.unit_name_1)
         self.assertEqual(self.unit_1.unit_symbol, self.unit_symbol_1)
-        self.assertEqual(self.unit_1.si_unit_coversion, self.si_unit_coversion_1)
+        self.assertEqual(self.unit_1.si_unit_coversion, self.si_unit)
