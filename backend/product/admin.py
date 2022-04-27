@@ -29,3 +29,13 @@ class MeasurementUnitAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 admin.site.register(MeasurementUnit, MeasurementUnitAdmin)
+
+class VariantAdmin(admin.ModelAdmin):
+    list_display = ('id', 'variant_name', 'variant_description', 'serial_number', 
+        'model'
+        )
+    list_display_links = ('variant_name',)
+    list_filter = ('variant_name',)
+    search_fields = ('serial_number',)
+
+admin.site.register(Variant, VariantAdmin)

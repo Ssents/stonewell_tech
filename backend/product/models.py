@@ -24,6 +24,9 @@ class Product(models.Model):
     name = models.CharField(max_length=256, unique = True, blank = False)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return (self.name)
     
 
 class Variant(models.Model):
@@ -42,7 +45,7 @@ class Variant(models.Model):
         ]
     size = models.CharField(choices = SIZE_CHOICES,max_length=256, blank = True)
     mass = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # mass_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
+    mass_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
     length = models.DecimalField(max_digits=100, decimal_places=2, default=0)
     # length_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
     width = models.DecimalField(max_digits=100, decimal_places=2, default=0)
