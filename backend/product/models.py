@@ -1,9 +1,14 @@
 from django.db import models
 
 # Create your models here.
+class Brand(models.Model):
+    name = models.CharField(max_length=256)
+    created_at = models.DateTimeField(auto_now=True)
+
 class MeasurementCategory(models.Model):
     name = models.CharField( max_length=256)
     si_unit = models.CharField(max_length=256)
+    created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return (self.name)
@@ -16,6 +21,7 @@ class MeasurementUnit(models.Model):
     symbol = models.CharField( max_length=3)
     category = models.ForeignKey(MeasurementCategory, on_delete=models.CASCADE)
     si_unit_coversion = models.DecimalField(max_digits=100, decimal_places=4)
+    created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return (self.name)
@@ -35,7 +41,7 @@ class Variant(models.Model):
     variant_description = models.TextField(blank = True)
     serial_number = models.CharField(max_length=256, blank=False)
     model = models.CharField(max_length=256)
-
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     SIZE_CHOICES = [
             ("XS", "extra small"),
             ("S", "small"),
@@ -44,18 +50,6 @@ class Variant(models.Model):
             ("XL", "extra large"),
         ]
     size = models.CharField(choices = SIZE_CHOICES,max_length=256, blank = True)
-    mass = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    mass_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
-    length = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # length_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
-    width = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # width_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
-    height = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # height_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
-    diameter = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # diameter_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
-    thickness = models.DecimalField(max_digits=100, decimal_places=2, default=0)
-    # thickness_unit = models.ForeignKey(MeasurementUnit, on_delete=models.CASCADE)
 
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)

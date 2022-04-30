@@ -3,7 +3,8 @@ from product.models import (
     MeasurementUnit, 
     MeasurementCategory,
     Product,
-    Variant,)
+    Variant,
+    Brand,)
 # Register your models here.
 
 class ProductAdmin(admin.ModelAdmin):
@@ -39,3 +40,11 @@ class VariantAdmin(admin.ModelAdmin):
     search_fields = ('serial_number',)
 
 admin.site.register(Variant, VariantAdmin)
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'created_at')
+    list_display_links = ('id', 'name',)
+    list_filter = ('name',)
+    search_fields = ('id', 'name',)
+
+admin.site.register(Brand, BrandAdmin)

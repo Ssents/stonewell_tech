@@ -1,0 +1,22 @@
+1651316250648	geckodriver	INFO	Listening on 127.0.0.1:60877
+1651317247228	geckodriver	INFO	Listening on 127.0.0.1:63777
+1651317250151	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63778" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\LYNDAH~1\\AppData\\Local\\Temp\\rust_mozprofilee93RKs"
+1651317251160	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LYNDAH~1\\AppData\\Local\\Temp\\rust_mozprofilee93RKs\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+DevTools listening on ws://localhost:63778/devtools/browser/75df53bb-39de-4d66-9e23-95f1123ec07d
+1651317260475	Marionette	INFO	Listening on port 63805
+Read port: 63805
+1651317261050	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651317362602	Marionette	INFO	Stopped listening on port 63805
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "63851" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\LYNDAH~1\\AppData\\Local\\Temp\\rust_mozprofileoX4y5m"
+1651317316156	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\LYNDAH~1\\AppData\\Local\\Temp\\rust_mozprofileoX4y5m\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+DevTools listening on ws://localhost:63851/devtools/browser/0953a259-de7e-43db-bdaa-14b7a2884814
+1651317324967	Marionette	INFO	Listening on port 63880
+Read port: 63880
+1651317325769	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
