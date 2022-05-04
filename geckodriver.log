@@ -20,3 +20,5 @@ DevTools listening on ws://localhost:63851/devtools/browser/0953a259-de7e-43db-b
 1651317324967	Marionette	INFO	Listening on port 63880
 Read port: 63880
 1651317325769	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651325872657	Marionette	INFO	Stopped listening on port 63880
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
