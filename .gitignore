@@ -3,3 +3,7 @@
 /frontend/node_modules
 /backend/backend/sk.py
 /backend/db.sqlite3
+
+# product
+/backend/product/tests/__pycache__
+/backend/product/tests/migrations
