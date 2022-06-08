@@ -3,7 +3,7 @@ from django.test import TestCase
 
 class VariantTest(TestCase):
 
-    def setUp(self):
+    def _setUp(self):
         variant_name = "tootpaste large"
         size = "large"
         mass = 122
@@ -36,7 +36,7 @@ class VariantTest(TestCase):
             height_unit = height_unit,
         )
 
-    def test_create_variant_sucessful(self):
+    def _test_create_variant_sucessful(self):
         '''
             Test that creating a product variant is successful
         '''
