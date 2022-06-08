@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+DEFAULT_ID = 1
 class Brand(models.Model):
     name = models.CharField(max_length=256)
     created_at = models.DateTimeField(auto_now=True)
@@ -26,11 +27,17 @@ class MeasurementUnit(models.Model):
     def __str__(self):
         return (self.name)
 
-class Product(models.Model):
+class ProductCategory(models.Model):
     name = models.CharField(max_length=256, unique = True, blank = False)
-    description = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
 
+class Product(models.Model):
+    name = models.CharField(max_length=256, unique = True, blank = False)
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, 
+        default = DEFAULT_ID)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now=True)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, default = DEFAULT_ID)
     def __str__(self):
         return (self.name)
     
@@ -40,8 +47,6 @@ class Variant(models.Model):
     variant_name = models.CharField(max_length=256)
     variant_description = models.TextField(blank = True)
     serial_number = models.CharField(max_length=256, blank=False)
-    model = models.CharField(max_length=256)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     SIZE_CHOICES = [
             ("XS", "extra small"),
             ("S", "small"),
